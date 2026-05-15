@@ -1,0 +1,10 @@
+{
+    "name": "Antigravity Desktop VM",
+    "image": "mcr.microsoft.com/devcontainers/universal:latest",
+    "features": {
+        "ghcr.io/devcontainers/features/desktop-lite:1": {
+            "version": "latest",
+            "desktop_type": "xfce"
+        }
+    }
+}
