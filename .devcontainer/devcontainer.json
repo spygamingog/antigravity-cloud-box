@@ -1,10 +1,35 @@
 {
-    "name": "Antigravity Desktop VM",
-    "image": "mcr.microsoft.com/devcontainers/universal:latest",
+    "name": "Antigravity Browser GUI Environment",
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu-22.04",
+    
+    // 1. Install the official VNC Desktop Feature (Handles the noVNC GUI)
     "features": {
         "ghcr.io/devcontainers/features/desktop-lite:1": {
-            "version": "latest",
-            "desktop_type": "xfce"
+            "version": "latest"
         }
-    }
+    },
+
+    // 2. Run the installation script for Chrome (with flags) and Antigravity
+    "updateContentCommand": "bash .devcontainer/setup-antigravity.sh",
+
+    // 3. Configure VS Code environment and port forwarding
+    "customizations": {
+        "vscode": {
+            "settings": {},
+            "extensions": []
+        }
+    },
+
+    // Automatically forward the VNC web interface port
+    "forwardPorts": [6080],
+    "portsAttributes": {
+        "6080": {
+            "label": "Antigravity Desktop GUI",
+            "onAutoForward": "openBrowser"
+        }
+    },
+
+    // Ensure the container has enough permission to run a sandboxed UI
+    "runArgs": ["--cap-add=SYS_ADMIN"],
+    "remoteUser": "vscode"
 }
