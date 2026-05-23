@@ -1,0 +1,21 @@
+name: ParkourFest
+version: '${project.version}'
+main: com.spy.parkourfest.ParkourFest
+api-version: '1.21'
+authors: [SpyGamingOG]
+description: Ultimate parkour mini-game with dynamic moving platforms inspired by Create Mod and Fall Guys
+
+commands:
+  pf:
+    description: ParkourFest main command
+    usage: /pf <subcommand> [args]
+    permission: pf.admin
+    aliases: [parkourfest, parkour]
+
+permissions:
+  pf.admin:
+    description: Full ParkourFest admin access
+    default: op
+  parkourfest.admin:
+    description: Bypass gameplay mechanics (OP exemption)
+    default: op
