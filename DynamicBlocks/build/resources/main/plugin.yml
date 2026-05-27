@@ -1,0 +1,29 @@
+name: DynamicBlocks
+version: '1.0.0-SNAPSHOT'
+main: com.spygamingog.dynamicblocks.DynamicBlocks
+api-version: '1.21'
+authors: [SpyGamingOG]
+description: >
+  Dynamic moving platforms and structures using per-block ArmorStand passenger interpolation.
+  Features LINEAR (path-based movement along points) and ROTATIONAL (spinner) movement types.
+  Complete operators and chat config menu (/db structure edit). Fully standalone.
+
+commands:
+  db:
+    description: DynamicBlocks main command
+    usage: |
+      /db tools                                    - Open visual structure wand tools
+      /db reload                                   - Reload configurations
+      /db structures <spawn|despawn|start|stop|reset> - Bulk controls
+      /db structure add <type> [name] [material]   - Add a moving structure
+      /db structure remove <id>                    - Remove a structure
+      /db structure edit <id>                      - Configure a structure in chat
+      /db structure list                           - List all structures
+      /db structure tp <id>                        - Teleport to structure center
+    permission: dynamicblocks.admin
+    aliases: [dynamicblocks, motion]
+
+permissions:
+  dynamicblocks.admin:
+    description: Full DynamicBlocks admin access
+    default: op
