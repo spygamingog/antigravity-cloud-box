@@ -1,21 +1,29 @@
-name: ParkourFest
+name: SpyMotion
 version: '${project.version}'
-main: com.spy.parkourfest.ParkourFest
+main: com.spy.spymotion.SpyMotion
 api-version: '1.21'
 authors: [SpyGamingOG]
-description: Ultimate parkour mini-game with dynamic moving platforms inspired by Create Mod and Fall Guys
+description: >
+  Dynamic moving platforms and structures using per-block ArmorStand passenger interpolation.
+  Features LINEAR (path-based movement along points) and ROTATIONAL (spinner) movement types.
+  Complete operadores and chat config menu (/sm structure edit). Fully standalone.
 
 commands:
-  pf:
-    description: ParkourFest main command
-    usage: /pf <subcommand> [args]
-    permission: pf.admin
-    aliases: [parkourfest, parkour]
+  sm:
+    description: SpyMotion main command
+    usage: |
+      /sm tools                                    - Open visual structure wand tools
+      /sm reload                                   - Reload configurations
+      /sm structures <spawn|despawn|start|stop|reset> - Bulk controls
+      /sm structure add <type> [name] [material]   - Add a moving structure
+      /sm structure remove <id>                    - Remove a structure
+      /sm structure edit <id>                      - Configure a structure in chat
+      /sm structure list                           - List all structures
+      /sm structure tp <id>                        - Teleport to structure center
+    permission: spymotion.admin
+    aliases: [spymotion, motion]
 
 permissions:
-  pf.admin:
-    description: Full ParkourFest admin access
-    default: op
-  parkourfest.admin:
-    description: Bypass gameplay mechanics (OP exemption)
+  spymotion.admin:
+    description: Full SpyMotion admin access
     default: op
